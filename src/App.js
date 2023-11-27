@@ -9,7 +9,7 @@ import Header from './Header';
 import Card from './Card';
 
 import { BrowserRouter as Router } from "react-router-dom";
-import { Form } from 'react-bootstrap';
+import { Form, Row, Col } from 'react-bootstrap';
 
 // Main App component
 function App() {
@@ -157,10 +157,16 @@ function App() {
       <div className="App" onMouseMove={handleMouseMove} onClick={handleAppClick}>
         <Header focalLength={focalLength} handleFocalLengthChange={handleFocalLengthChange} handleFocalLengthKeyPress={handleFocalLengthKeyPress} objectDistance={objectDistance} handleObjectDistanceChange={handleObjectDistanceChange} />
         <ImageContainer x={x} handleImageClick={handleImageClick} imageDistance={imageDistance} focalPoint={focalLength} objectDistance={objectDistance}/>
-        <div className="graph-and-logo-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <GraphContainer objectDistance={objectDistance} imageDistance={imageDistance} />
-          <Card {...cards[selectedCardIndex]} onPrevious={handlePrevious} onNext={handleNext} />
-        </div>
+        <div className="graph-and-logo-container">  
+          <Row>
+            <Col sm={12} md={6} className='h-100'>
+              <GraphContainer objectDistance={objectDistance} imageDistance={imageDistance} />
+            </Col>
+            <Col sm={12} md={6} className='h-100'>
+              <Card {...cards[selectedCardIndex]} onPrevious={handlePrevious} onNext={handleNext} />
+            </Col>
+          </Row>
+        </div>  
       </div>
     </Router>
   );

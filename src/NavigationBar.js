@@ -8,7 +8,7 @@ import './styles/NavigationBar.css';
 
 const NavigationBar = () => {
     return (
-        <Navbar bg="dark" className="custom-navbar" variant="dark" expand="lg">
+        <Navbar className="custom-navbar" expand="lg">
             <LinkContainer to="/">
                 <Navbar.Brand>
                     <img src={logo}
@@ -31,7 +31,7 @@ const NavigationBar = () => {
                     <LinkContainer to="/instructions">
                         <Nav.Link>Instrucciones</Nav.Link>
                     </LinkContainer>
-                    <NavDropdown title="Referencias" id="basic-nav-dropdown">
+                    <NavDropdown title="Referencias" id="basic-nav-dropdown" className="custom-nav-dropdown">
                         <LinkContainer to="/resources/reading">
                             <NavDropdown.Item>Lecturas</NavDropdown.Item>
                         </LinkContainer>
@@ -40,7 +40,7 @@ const NavigationBar = () => {
                         </LinkContainer>
                     </NavDropdown>
                     <LinkContainer to="Contacto">
-                        <Nav.Link>Contacto/Feedback</Nav.Link>
+                        <Nav.Link>Contacto</Nav.Link>
                     </LinkContainer>
                 </Nav>
             </Navbar.Collapse>

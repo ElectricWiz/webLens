@@ -19,7 +19,7 @@ function ImageContainer({ x, handleImageClick, imageDistance, focalPoint }) {
     }, []);
 
     return (
-        <Container fluid className="ImagesAndLensContainer" ref={containerRef}>
+        <div className="ImagesAndLensContainer" ref={containerRef}>
             <OverlayTrigger
                 placement="top"
                 overlay={
@@ -46,7 +46,7 @@ function ImageContainer({ x, handleImageClick, imageDistance, focalPoint }) {
             </OverlayTrigger>
             <FocalPoint position={lensPosition - focalPoint} lensPosition={lensPosition} />
             <Lens />
-        </Container>
+        </div>
     );
   }
 

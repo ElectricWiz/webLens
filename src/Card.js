@@ -6,25 +6,28 @@ function Card({ stepTitle, stepSummary, illustration, tooltipText, readMoreText,
 
     const buttonStyle = { 
         margin: "10px",
-        backgroundColor: 'black', 
-        color: 'lightseagreen' 
+        backgroundColor: '#F1D3B3', 
+        color: '#65647C',
+        border: 'none',
+        boxShadow: '0px 4px 8px 3px rgba(0, 0, 0, 0.6)', 
     };
 
     return (
-        <BootstrapCard>
-            <BootstrapCard.Body>
-                <BootstrapCard.Title>{stepTitle}</BootstrapCard.Title>
-                <BootstrapCard.Text>{stepSummary}</BootstrapCard.Text>
-{/*                 <BootstrapCard.Img variant="top" src={illustration} /> */}
-                <OverlayTrigger overlay={<Tooltip>{tooltipText}</Tooltip>}>
-                    <Button variant="info">i</Button>
-                </OverlayTrigger>
-                <Button onClick={() => setIsExpanded(!isExpanded)} style={buttonStyle}>{readMoreText}</Button>
-                {isExpanded && actionableItems}
-                <Button onClick={onPrevious} style={buttonStyle}>Anterior</Button>
-                <Button onClick={onNext} style={buttonStyle}>Siguiente</Button>
-            </BootstrapCard.Body>
-        </BootstrapCard>
+        <div className="card-container" style={{ boxShadow: "0px 4px 8px 4px rgba(0, 0, 0, 0.8)" }}>
+            <div className="card">
+                <div className="card-body">
+                    <h5 className="card-title">{stepTitle}</h5>
+                    <p className="card-text">{stepSummary}</p>
+                    <OverlayTrigger overlay={<Tooltip>{tooltipText}</Tooltip>}>
+                        <Button variant="info">i</Button>
+                    </OverlayTrigger>
+                    <Button className="custom-button" onClick={() => setIsExpanded(!isExpanded)} style={buttonStyle}>{readMoreText}</Button>
+                    {isExpanded && actionableItems}
+                    <Button className="custom-button" onClick={onPrevious} style={buttonStyle}>Anterior</Button>
+                    <Button className="custom-button" onClick={onNext} style={buttonStyle}>Siguiente</Button>
+                </div>
+            </div>
+        </div>
     );
 }
 

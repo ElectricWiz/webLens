@@ -1,15 +1,23 @@
 .custom-navbar {
-    background-color: lightseagreen !important; /* Replace with the color you want */
+    background-color: #65647C !important; /* Replace with the color you want */
   }
 
 .custom-navbar .nav-link {
-    color: turquoise;
+    color: #F1D3B3;
 }
 
 .custom-navbar .nav-link:hover {
-    color: white;
+    color: #b38cb4;
 }
 
 .custom-navbar .nav-link:active {
-    color: lightseagreen;
+    color: #D6FF79;
 }
+
+.custom-nav-dropdown .dropdown-menu {
+    background-color: #65647C; /* Change this to the desired background color */
+  }
+  
+  .custom-nav-dropdown .dropdown-menu .dropdown-item {
+    color: #F1D3B3; /* Change this to the desired text color */
+  }
