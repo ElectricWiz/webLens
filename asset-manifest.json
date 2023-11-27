@@ -1,17 +1,15 @@
 {
   "files": {
-    "main.css": "/webLens/static/css/main.a0aaf62b.css",
-    "main.js": "/webLens/static/js/main.3bbb1eb8.js",
-    "static/js/787.bcd107c0.chunk.js": "/webLens/static/js/787.bcd107c0.chunk.js",
+    "main.css": "/webLens/static/css/main.fbba8264.css",
+    "main.js": "/webLens/static/js/main.0a25a373.js",
     "static/media/logoFC_2.png": "/webLens/static/media/logoFC_2.891149d285b6631160db.png",
     "static/media/lens.png": "/webLens/static/media/lens.14a53f32d88806054905.png",
     "index.html": "/webLens/index.html",
-    "main.a0aaf62b.css.map": "/webLens/static/css/main.a0aaf62b.css.map",
-    "main.3bbb1eb8.js.map": "/webLens/static/js/main.3bbb1eb8.js.map",
-    "787.bcd107c0.chunk.js.map": "/webLens/static/js/787.bcd107c0.chunk.js.map"
+    "main.fbba8264.css.map": "/webLens/static/css/main.fbba8264.css.map",
+    "main.0a25a373.js.map": "/webLens/static/js/main.0a25a373.js.map"
   },
   "entrypoints": [
-    "static/css/main.a0aaf62b.css",
-    "static/js/main.3bbb1eb8.js"
+    "static/css/main.fbba8264.css",
+    "static/js/main.0a25a373.js"
   ]
 }
