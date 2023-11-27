@@ -4,7 +4,7 @@ function FocalPoint({ position, lensPosition }) {
     return (
         <>
             <div className="focal-point" style={{ left: `${position}px` }} />
-            <div style={{ left: `${position}px`, position: 'absolute', transform: "translateX(-50%)" }}>Longitud focal</div>
+            <div style={{ left: `${position}px`, position: 'absolute', transform: "translateX(-50%)" }}>foco</div>
         </>
     );
 }

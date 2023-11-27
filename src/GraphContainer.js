@@ -13,7 +13,7 @@ function GraphContainer({ objectDistance, imageDistance }) {
           data={{
             datasets: [
               {
-                label: 'Distances',
+                label: 'Distancia Imagen',
                 data: [
                   { x: objectDistance, y: imageDistance } // point representing the object and image distances
                 ],
@@ -26,7 +26,15 @@ function GraphContainer({ objectDistance, imageDistance }) {
               x: {
                 type: 'linear', // specify the type of scale
                 title: {
-                  // ...
+                  display: true,
+                  text: 'Distancia Objeto'
+                },
+                },
+              y: {
+                type: 'linear',
+                title: {
+                  display: true,
+                  text: 'Distancia Imagen'
                 }
               }
             }
