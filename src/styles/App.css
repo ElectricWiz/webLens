@@ -7,11 +7,13 @@
 .ImagesAndLensContainer {
   flex: 1;
   position: relative;
-  border: 4px solid grey; /* Replace #color with the color you want */
-  border-radius: 20px;
-  margin: 15px;
+  border: 4px solid lightseagreen; /* Assuming the navbar has a blue color scheme */
+  border-radius: 0.25rem; /* Bootstrap 4's default border-radius */
+  margin: 15px auto;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Adding subtle shadow for depth */
+  background-color: #fff; /* A contrasting background */
+  padding: 15px; /* Spacing within the container */
 }
-
 
 .graph-container {
   flex: 1;
@@ -28,14 +30,28 @@
   position: absolute;
 }
 
+.image-wrapper {
+  position: relative;
+}
+
 .FixedImage {
   width: 100px;
-  height: 100px;
+  height: 50px;
+  top: 50%;
   position: absolute;
   right: 0;
-  transform: perspective(1000px) rotateY(45deg);
+  transform: perspective(1000px) rotateY(45deg) translateY(-50%);
   transform-origin: center;
   border: 1px solid black;
+}
+
+.focal-point {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
 }
 
 .ImageAtImageDistance {
@@ -44,13 +60,15 @@
   position: absolute;
   right: 0;
   opacity: 0.6;
-  transform: perspective(1000px) rotateY(-45deg); /* Add this line */
+  top: 50%;
+  transform: perspective(1000px) rotateY(-45deg) translateY(-50%); /* Add this line */
   transform-origin: center;
   border: 1px solid black;
 }
 
 .Lens {
   position: absolute;
+  height: 70%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

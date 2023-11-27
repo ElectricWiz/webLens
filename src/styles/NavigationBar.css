@@ -1,0 +1,15 @@
+.custom-navbar {
+    background-color: lightseagreen !important; /* Replace with the color you want */
+  }
+
+.custom-navbar .nav-link {
+    color: turquoise;
+}
+
+.custom-navbar .nav-link:hover {
+    color: white;
+}
+
+.custom-navbar .nav-link:active {
+    color: lightseagreen;
+}

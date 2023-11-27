@@ -1,29 +1,13 @@
-import React, { useState } from 'react';
-import logo from './logo192.png'; // Import the image
-import lens from './lens.png'; // Import the lens image
-import logoFC from './logoFC_2.png';
-import './App.css'; // Import the styles
+import React, { useState } from 'react'; 
+import logoFC from './images/logoFC_2.png';
+import './styles/App.css'; // Import the styles
 
-import { Scatter } from 'react-chartjs-2';
-import { Chart } from 'chart.js';
-import { LinearScale } from 'chart.js/auto';
+import NavigationBar from './NavigationBar';
+import GraphContainer from './GraphContainer';
+import ImageContainer from './ImageContainer';
+import Header from './Header';
 
-Chart.register(LinearScale);
-
-// Component for the movable object
-const MovableObject = ({ x }) => {
-  return <div className="MovableObject" style={{ left: `${x}px` }} />;
-};
-
-// Component for the fixed image
-const FixedImage = ({ x, onClick, className, transform, height }) => {
-  return <img className={className} src={logo} alt="Fixed" style={{ left: `${x}px`, top: '50%', transform: transform, height: height }} onClick={onClick} />;
-};
-
-// Component for the lens
-const Lens = () => {
-  return <img className="Lens" src={lens} alt="Lens" />;
-};
+import { BrowserRouter as Router } from "react-router-dom";
 
 // Main App component
 function App() {
@@ -85,60 +69,17 @@ function App() {
   const objectDistance = window.innerWidth / 2 - x;
 
   return (
-    <div className="App" onMouseMove={handleMouseMove} onClick={handleAppClick}>
-      <div className="ImagesAndLensContainer">
-        <div className="FocalLengthInput">
-          <label htmlFor="focalLength">Longitud Focal:</label>
-          <input type="number" id="focalLength" value={focalLength} onChange={handleFocalLengthChange} onKeyPress={handleFocalLengthKeyPress} />
-        </div>
-        <FixedImage x={x} onClick={handleImageClick} className="FixedImage" transform="perspective(1000px) rotateY(45deg)" height={`${originalHeight}px`} /> {/* Use FixedImage as the movable object */}
-        <FixedImage x={x === imageDistance ? 150 : Math.abs(imageDistance)} className="ImageAtImageDistance" transform={`perspective(1000px) rotateY(-45deg)`} />
-        <Lens />
-      </div>
-      <div className="horizontal-line"></div>
-      <div className="graph-and-logo-container">
-        <div className="graph-container">
-        <Scatter
-          data={{
-            datasets: [
-              {
-                label: 'Distances',
-                data: [
-                  { x: objectDistance, y: imageDistance } // point representing the object and image distances
-                ],
-                backgroundColor: 'rgb(75, 192, 192)'
-              }
-            ]
-          }}
-          options={{
-            scales: {
-              x: {
-                type: 'linear', // specify the type of scale
-                title: {
-                  display: true,
-                  text: 'Object Distance'
-                },
-                min: -focalLength*3, // minimum value
-                max: focalLength, // maximum value
-              },
-              y: {
-                type: 'linear', // specify the type of scale
-                title: {
-                  display: true,
-                  text: 'Image Distance'
-                },
-                min: -3500, // minimum value
-                max: 3500, // maximum value
-              }
-            }
-          }}
-        />
-         </div>
-         <div className="logo-container">
-          <img src={logoFC} alt="Facultad de Ciencias UNAM logo" className="logo" />
+    <Router>
+      <div className="App" onMouseMove={handleMouseMove} onClick={handleAppClick}>
+        <Header focalLength={focalLength} handleFocalLengthChange={handleFocalLengthChange} handleFocalLengthKeyPress={handleFocalLengthKeyPress} />
+        <ImageContainer x={x} handleImageClick={handleImageClick} imageDistance={imageDistance} focalPoint={focalLength}/>
+        <div className="horizontal-line"></div>
+        <div className="graph-and-logo-container">
+          <GraphContainer objectDistance={objectDistance} imageDistance={imageDistance} />
+          {/* ... */}
         </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
